@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 import _ from 'lodash';
 
 export const description = 'What is the result of the expression?';
