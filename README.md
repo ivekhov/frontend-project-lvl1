@@ -14,4 +14,3 @@ asciinema recordings
 [![asciicast](https://asciinema.org/a/0UaiRDdSUUyuYmsLUWl6PzOUZ.svg)](https://asciinema.org/a/0UaiRDdSUUyuYmsLUWl6PzOUZ)
 
 ---
-
