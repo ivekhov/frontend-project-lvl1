@@ -6,8 +6,7 @@ const play = (description, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(description);
-  console.log();
+  console.log(`${description} \n`);
 
   for (let i = 0; i < attemptCounts; i += 1) {
     const response = getQuestionAndAnswer();
@@ -18,7 +17,7 @@ const play = (description, getQuestionAndAnswer) => {
     if (answer !== correct) {
       console.log(`'${answer}' is wrong answer ;(.`);
       console.log(`Correct answer was '${correct}'`);
-      console.log(`Let\`s try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');
