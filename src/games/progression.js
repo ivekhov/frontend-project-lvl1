@@ -13,8 +13,7 @@ export const getQuestionAndAnswer = () => {
     progression.push(step * i + start);
   }
   const correct = start + step * hiddenPosition;
-  progression[hiddenPosition] = '...';
+  progression[hiddenPosition] = '..';
   const question = progression.map(_.toString);
-
   return [question, correct.toString()];
 };
