@@ -5,24 +5,8 @@ const randomMin = 1;
 const randomMax = 25;
 
 const findGcd = (first, second) => {
-  let large;
-  let small;
-  let residual;
-
-  if (first > second) {
-    large = first;
-    small = second;
-  } else {
-    large = second;
-    small = first;
-  }
-  residual = large % small;
-  while (residual !== 0) {
-    large = small;
-    small = residual;
-    residual = large % small;
-  }
-  return small;
+  if (second === 0) return first;
+  return findGcd(second, first % second);
 };
 
 export const getQuestionAndAnswer = () => {

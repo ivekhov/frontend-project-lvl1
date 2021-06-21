@@ -14,7 +14,7 @@ export const getQuestionAndAnswer = () => {
   }
   const correct = start + step * hiddenPosition;
   progression[hiddenPosition] = '...';
-  const question = _.map(progression, _.toString);
+  const question = progression.map(_.toString);
 
   return [question, correct.toString()];
 };
