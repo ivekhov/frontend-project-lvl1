@@ -5,26 +5,29 @@ const operators = '+-*';
 const randomMin = 1;
 const randomMax = 25;
 
-export const getQuestionAndAnswer = () => {
-  const first = _.random(randomMin, randomMax);
-  const second = _.random(randomMin, randomMax);
-  const operation = _.sample(operators);
-  let correct;
-
-  switch (operation) {
+const arithmeticOperations = (operator, firstOperand, secondOperand) => {
+  let result;
+  switch (operator) {
     case '+':
-      correct = _.add(first, second);
+      result = _.add(firstOperand, secondOperand);
       break;
     case '-':
-      correct = _.subtract(first, second);
+      result = _.subtract(firstOperand, secondOperand);
       break;
     case '*':
-      correct = _.multiply(first, second);
+      result = _.multiply(firstOperand, secondOperand);
       break;
     default:
       break;
   }
+  return result;
+};
 
-  const question = [first.toString(), operation, second.toString()].join(' ');
+export const getQuestionAndAnswer = () => {
+  const operator = _.sample(operators);
+  const firstOperand = _.random(randomMin, randomMax);
+  const secondOperand = _.random(randomMin, randomMax);
+  const correct = arithmeticOperations(operator, firstOperand, secondOperand);
+  const question = `${firstOperand.toString()} ${operator} ${secondOperand.toString()}`;
   return [question, correct.toString()];
 };
