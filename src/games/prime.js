@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { getRandomInt } from './calc.js';
 
 export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const randomMin = 1;
@@ -13,7 +13,7 @@ const isPrime = (number) => {
 };
 
 export const getQuestionAndAnswer = () => {
-  const question = _.random(randomMin, randomMax);
+  const question = getRandomInt(randomMin, randomMax);
   const correct = isPrime(question) ? 'yes' : 'no';
   return [question.toString(), correct];
 };

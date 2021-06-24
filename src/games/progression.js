@@ -1,12 +1,12 @@
-import _ from 'lodash';
+import { getRandomInt } from './calc.js';
 
 export const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 export const getQuestionAndAnswer = () => {
-  const start = _.random(1, progressionLength);
-  const step = _.random(1, progressionLength);
-  const hiddenPosition = _.random(0, progressionLength - 1);
+  const start = getRandomInt(1, progressionLength);
+  const step = getRandomInt(1, progressionLength);
+  const hiddenPosition = getRandomInt(0, progressionLength - 1);
 
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {

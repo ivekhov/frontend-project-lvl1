@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { getRandomInt } from './calc.js';
 
 export const description = 'Find the greatest common divisor of given numbers.';
 const randomMin = 1;
@@ -10,9 +10,9 @@ const findGcd = (first, second) => {
 };
 
 export const getQuestionAndAnswer = () => {
-  const first = _.random(randomMin, randomMax);
-  const second = _.random(randomMin, randomMax);
-  const correct = findGcd(first, second);
-  const question = [first.toString(), second.toString()].join(' ');
+  const firstOperand = getRandomInt(randomMin, randomMax);
+  const secondOperand = getRandomInt(randomMin, randomMax);
+  const correct = findGcd(firstOperand, secondOperand);
+  const question = `${firstOperand.toString()} ${secondOperand.toString()}`;
   return [question, correct.toString()];
 };
