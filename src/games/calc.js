@@ -1,3 +1,5 @@
+import getRandomInt from '../utils.js';
+
 export const description = 'What is the result of the expression?';
 const operators = '+-*';
 const randomMin = 1;
@@ -20,8 +22,6 @@ const arithmeticOperations = (operator, firstOperand, secondOperand) => {
   }
   return result;
 };
-
-export const getRandomInt = (min, max) => Math.floor(Math.random(min, max) * max);
 
 export const getQuestionAndAnswer = () => {
   const operator = operators[getRandomInt(0, operators.length)];

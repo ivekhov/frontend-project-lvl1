@@ -1,4 +1,4 @@
-import { getRandomInt } from './calc.js';
+import getRandomInt from '../utils.js';
 
 export const description = 'What number is missing in the progression?';
 const progressionLength = 10;

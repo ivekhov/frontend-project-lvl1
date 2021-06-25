@@ -1,4 +1,4 @@
-import { getRandomInt } from './calc.js';
+import getRandomInt from '../utils.js';
 
 export const description = 'Answer "yes" if number even otherwise answer "no".';
 const randomMin = 1;
