@@ -12,7 +12,7 @@ const findGcd = (first, second) => {
 export const getQuestionAndAnswer = () => {
   const firstOperand = getRandomInt(randomMin, randomMax);
   const secondOperand = getRandomInt(randomMin, randomMax);
-  const correct = findGcd(firstOperand, secondOperand);
-  const question = `${firstOperand.toString()} ${secondOperand.toString()}`;
-  return [question, correct.toString()];
+  const correctAnswer = findGcd(firstOperand, secondOperand);
+  const question = `${firstOperand} ${secondOperand}`;
+  return [question, correctAnswer.toString()];
 };

@@ -5,7 +5,7 @@ const operators = '+-*';
 const randomMin = 1;
 const randomMax = 25;
 
-const arithmeticOperations = (operator, firstOperand, secondOperand) => {
+const genComputation = (operator, firstOperand, secondOperand) => {
   let result;
   switch (operator) {
     case '+':
@@ -18,7 +18,7 @@ const arithmeticOperations = (operator, firstOperand, secondOperand) => {
       result = firstOperand * secondOperand;
       break;
     default:
-      break;
+      throw new Error(`Неизвестный оператор: '${operator}'!`);
   }
   return result;
 };
@@ -27,7 +27,7 @@ export const getQuestionAndAnswer = () => {
   const operator = operators[getRandomInt(0, operators.length)];
   const firstOperand = getRandomInt(randomMin, randomMax);
   const secondOperand = getRandomInt(randomMin, randomMax);
-  const correct = arithmeticOperations(operator, firstOperand, secondOperand);
-  const question = `${firstOperand.toString()} ${operator} ${secondOperand.toString()}`;
-  return [question, correct.toString()];
+  const correctAnswer = genComputation(operator, firstOperand, secondOperand);
+  const question = `${firstOperand} ${operator} ${secondOperand}`;
+  return [question, correctAnswer.toString()];
 };

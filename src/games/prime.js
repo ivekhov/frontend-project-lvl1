@@ -14,6 +14,6 @@ const isPrime = (number) => {
 
 export const getQuestionAndAnswer = () => {
   const question = getRandomInt(randomMin, randomMax);
-  const correct = isPrime(question) ? 'yes' : 'no';
-  return [question.toString(), correct];
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question.toString(), correctAnswer];
 };

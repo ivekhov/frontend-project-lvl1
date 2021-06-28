@@ -1,4 +1,4 @@
-import getRandomInt from '../utils.js';
+import { genProgression, getRandomInt } from '../utils.js';
 
 export const description = 'What number is missing in the progression?';
 const progressionLength = 10;
@@ -8,12 +8,9 @@ export const getQuestionAndAnswer = () => {
   const step = getRandomInt(1, progressionLength);
   const hiddenPosition = getRandomInt(0, progressionLength - 1);
 
-  const progression = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(step * i + start);
-  }
-  const correct = start + step * hiddenPosition;
+  const progression = genProgression(progressionLength, step, start);
+  const correctAnswer = start + step * hiddenPosition;
   progression[hiddenPosition] = '..';
   const question = progression.join(' ');
-  return [question, correct.toString()];
+  return [question, correctAnswer.toString()];
 };
