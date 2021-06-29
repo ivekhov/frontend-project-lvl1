@@ -1,4 +1,4 @@
-import getRandomInt from '../utils.js';
+import { getRandomInt } from '../utils.js';
 
 export const description = 'What is the result of the expression?';
 const operators = '+-*';
