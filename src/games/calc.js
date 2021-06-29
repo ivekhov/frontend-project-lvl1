@@ -1,6 +1,7 @@
 import { getRandomInt } from '../utils.js';
+import play from '../index.js';
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const operators = '+-*';
 const randomMin = 1;
 const randomMax = 25;
@@ -23,7 +24,7 @@ const genComputation = (operator, firstOperand, secondOperand) => {
   return result;
 };
 
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const operator = operators[getRandomInt(0, operators.length - 1)];
   const firstOperand = getRandomInt(randomMin, randomMax);
   const secondOperand = getRandomInt(randomMin, randomMax);
@@ -31,3 +32,5 @@ export const getQuestionAndAnswer = () => {
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   return [question, correctAnswer.toString()];
 };
+
+play(description, getQuestionAndAnswer);
