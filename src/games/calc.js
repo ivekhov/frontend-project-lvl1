@@ -24,7 +24,7 @@ const genComputation = (operator, firstOperand, secondOperand) => {
 };
 
 export const getQuestionAndAnswer = () => {
-  const operator = operators[getRandomInt(0, operators.length)];
+  const operator = operators[getRandomInt(0, operators.length - 1)];
   const firstOperand = getRandomInt(randomMin, randomMax);
   const secondOperand = getRandomInt(randomMin, randomMax);
   const correctAnswer = genComputation(operator, firstOperand, secondOperand);
