@@ -1,7 +1,6 @@
 import { getRandomInt } from '../utils.js';
-import play from '../index.js';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const randomMin = 1;
 const randomMax = 25;
 
@@ -13,10 +12,8 @@ const isPrime = (number) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+export const getQuestionAndAnswer = () => {
   const question = getRandomInt(randomMin, randomMax);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question.toString(), correctAnswer];
 };
-
-play(description, getQuestionAndAnswer);

@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-import '../src/games/progression.js';
+import { description, getQuestionAndAnswer } from '../src/games/progression.js';
+import play from '../src/index.js';
+
+const playGame = () => {
+  play(description, getQuestionAndAnswer);
+};
+
+playGame();

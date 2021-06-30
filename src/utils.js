@@ -3,7 +3,7 @@ export const getRandomInt = (min, max) => {
   return Math.floor(rand);
 };
 
-export const genProgression = (progressionLength, step, start) => {
+export const getProgression = (progressionLength, step, start) => {
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(step * i + start);

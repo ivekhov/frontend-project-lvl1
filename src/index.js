@@ -10,7 +10,7 @@ const play = (description, getQuestionAndAnswer) => {
 
   for (let i = 0; i < attemptCount; i += 1) {
     const response = getQuestionAndAnswer();
-    const [question, correct] = [response[0], response[1]];
+    const [question, correct] = response;
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== correct) {

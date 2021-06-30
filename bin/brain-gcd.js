@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-import '../src/games/gcd.js';
+import { description, getQuestionAndAnswer } from '../src/games/gcd.js';
+import play from '../src/index.js';
+
+const playGame = () => {
+  play(description, getQuestionAndAnswer);
+};
+
+playGame();
